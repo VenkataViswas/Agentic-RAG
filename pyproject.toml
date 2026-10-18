@@ -8,9 +8,11 @@ authors = [
 ]
 requires-python = ">=3.11"
 dependencies = [
+    "beautifulsoup4>=4.15.0",
     "black>=26.10.1",
     "isort>=9.0.2",
     "langchain>=1.4.6",
+    "langchain-chroma>=1.1.0",
     "langchain-community>=0.4.2",
     "langchain-google-genai>=4.4.2",
     "langchain-tavily>=0.2.18",

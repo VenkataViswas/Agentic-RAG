@@ -9,3 +9,5 @@ langchain-community
 pytest
 langchain-unstructured 
 langchain-text-splitters
+langchain-chroma
+beautifulsoup4
