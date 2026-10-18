@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from agenticrag!")
+from dotenv import load_dotenv
+
+load_dotenv()

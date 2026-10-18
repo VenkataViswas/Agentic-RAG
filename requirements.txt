@@ -6,3 +6,6 @@ langgraph
 langchain-google-genai
 langchain-tavily
 langchain-community
+pytest
+langchain-unstructured 
+langchain-text-splitters
