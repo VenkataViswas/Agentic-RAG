@@ -1,4 +1,4 @@
-# Agentic RAG (Corrective Retrieval-Augmented Generation)
+# CorrectRAG — Adaptive RAG with document grading & web fallback
 
 An  RAG system built with **LangGraph**, **LangChain**, **Google Gemini**, **ChromaDB**, and **Tavily Web Search**.
 
