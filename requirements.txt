@@ -10,4 +10,6 @@ pytest
 langchain-unstructured 
 langchain-text-splitters
 langchain-chroma
+langchain-huggingface
+sentence-transformers
 beautifulsoup4
