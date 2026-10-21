@@ -1,2 +1,5 @@
+from graphs.graph import app
+
 def main():
-    print("hello from main")
+    print("=="*20)
+    print(app.invoke(input={"question": "what is agent memory?"}))
