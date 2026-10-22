@@ -7,6 +7,7 @@ load_dotenv()
 
 from graphs.chains.retriever_grader import GradeDocuments, retrieval_grader
 from graphs.chains.generation import generation_chain
+from graphs.chains.hallucination_grader import hallucination_grader, GradeHallucinations
 from ingestion import retriever
 
 
@@ -38,3 +39,26 @@ def test_generation_chain() -> None:
     docs = retriever.invoke(question)
     generation = generation_chain.invoke({"context": docs, "question": question})
     pprint(generation)
+
+    def test_hallucination_grader_answer_yes() -> None:
+        question = "agent memory"
+        docs = retriever.invoke(question)
+
+        generation = generation_chain.invoke({"context": docs, "question": question})
+        res: GradeHallucinations = hallucination_grader.invoke(
+            {"documents": docs, "generation": generation}
+        )
+        assert res.binary_score
+
+    def test_hallucination_grader_answer_no() -> None:
+        question = "agent memory"
+        docs = retriever.invoke(question)
+
+        res: GradeHallucinations = hallucination_grader.invoke(
+            {
+                "documents": docs,
+                "generation": "In order to make pizza we need to first start with the dough",
+            }
+        )
+        assert not res.binary_score
+
